@@ -1,0 +1,20 @@
+<div *ngFor="let grocery of groceries">
+  
+  <input 
+    type="checkbox" 
+    name="groceries" 
+    value="{{grocery.id}}"
+    [(ngModel)]="grocery.isChecked"
+    (change)="setChecked($event)"
+    />
+    {{grocery.name}}
+
+</div>
+
+<button (click)="checkAll()">Check All</button>
+<button (click)="uncheckAll()">Uncheck All</button>
+<button (click)="checkSome()">Check some</button>
+
+<pre>    
+  {{listSelected() | json}}  
+</pre>
